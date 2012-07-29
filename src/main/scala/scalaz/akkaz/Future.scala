@@ -2,8 +2,8 @@ package scalaz.akkaz
 
 import scalaz.{Monad, Comonad, Traverse, Applicative}
 
+import akka.dispatch.{Await, ExecutionContext, Future, Promise}
 import akka.util.Duration
-import akka.dispatch.{ExecutionContext, Future, KeptPromise, Await}
 
 /**
  * @see [[scalaz.akkaz.future]] for examples
@@ -31,17 +31,20 @@ trait FutureInstances {
 
     // Comonad
 
-    override def cojoin[A](a: Future[A]): Future[Future[A]] = new KeptPromise(Right(a))
+    override def cojoin[A](a: Future[A]): Future[Future[A]] = Promise.successful(a)
 
-    override def cobind[A, B](fa: Future[A])(f: (Future[A]) => B): Future[B] = new KeptPromise(Right(f(fa)))
+    override def cobind[A, B](fa: Future[A])(f: (Future[A]) => B): Future[B] = Promise.successful(f(fa))
 
+    /**Blocks the current Thread until the result is available.*/
     override def copoint[A](p: Future[A]): A = Await.result(p, atMost)
 
     // Traverse
 
+    /**Blocks the current Thread until the result is available.*/
     override def traverseImpl[G[_] : Applicative, A, B](fa: Future[A])(f: (A) => G[B]): G[Future[B]] =
-      Applicative[G].map(f(Await.result(fa, atMost)))(x => new KeptPromise(Right(x)))
+      Applicative[G].map(f(Await.result(fa, atMost)))(Promise.successful)
 
+    /**Blocks the current Thread until the result is available.*/
     override def foldRight[A, B](fa: Future[A], z: => B)(f: (A, => B) => B): B =
       f(Await.result(fa, atMost), z)
 
