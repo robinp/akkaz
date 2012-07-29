@@ -1,0 +1,1 @@
+Index.PACKAGES = {"scalaz" : [], "scalaz.akkaz" : [{"object" : "scalaz\/akkaz\/future$.html", "name" : "scalaz.akkaz.future"}, {"trait" : "scalaz\/akkaz\/FutureInstances.html", "name" : "scalaz.akkaz.FutureInstances"}]};

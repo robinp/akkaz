@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>scalaz</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link type="text/css" media="screen" rel="stylesheet" href="../lib/template.css" />
+      <script type="text/javascript" src="../lib/jquery.js"></script>
+      <script type="text/javascript" src="../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../lib/template.js"></script>
+      <script type="text/javascript" src="../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+      <div id="definition">
+        <img src="../lib/package_big.png" />
+        
+        <h1>scalaz</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">scalaz</span>
+      </span>
+      </h4>
+      
+      <div class="fullcommenttop" id="comment"></div>
+    
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="scalaz.package#&lt;~" data-isabs="false">
+      <a id="&lt;~:&lt;~[F, G]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $less$tilde">&lt;~</span><span class="tparams">[<span name="F">+F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="G">-G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> = <span name="scalaz.NaturalTransformation" class="extype">NaturalTransformation</span>[G, F]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#=?&gt;" data-isabs="false">
+      <a id="=?&gt;:=?&gt;[E, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $eq$qmark$greater">=?&gt;</span><span class="tparams">[<span name="E">E</span>, <span name="A">A</span>]</span><span class="result"> = <span name="scalaz.Kleisli" class="extype">Kleisli</span>[<span name="scala.Option" class="extype">Option</span>, E, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#@&gt;" data-isabs="false">
+      <a id="@&gt;:@&gt;[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $at$greater">@&gt;</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.LensT" class="extype">LensT</span>[Id, A, B]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#@?&gt;" data-isabs="false">
+      <a id="@?&gt;:@?&gt;[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $at$qmark$greater">@?&gt;</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.PLensT" class="extype">PLensT</span>[Id, A, B]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#@@" data-isabs="false">
+      <a id="@@:@@[T, Tag]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $at$at">@@</span><span class="tparams">[<span name="T">T</span>, <span name="Tag">Tag</span>]</span><span class="result"> = T with Tagged[Tag]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Alternative" data-isabs="false">
+      <a id="Alternative:Alternative[F]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Alternative</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> = <span name="scalaz.ApplicativePlus" class="extype">ApplicativePlus</span>[F]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#FirstOption" data-isabs="false">
+      <a id="FirstOption:FirstOption[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FirstOption</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> = <span name="scala.Option" class="extype">Option</span>[A] with Tagged[<span name="scalaz.Tags.First" class="extype">First</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#LastOption" data-isabs="false">
+      <a id="LastOption:LastOption[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LastOption</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> = <span name="scala.Option" class="extype">Option</span>[A] with Tagged[<span name="scalaz.Tags.Last" class="extype">Last</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Lens" data-isabs="false">
+      <a id="Lens:Lens[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Lens</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.LensT" class="extype">LensT</span>[Id, A, B]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#MaxOption" data-isabs="false">
+      <a id="MaxOption:MaxOption[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MaxOption</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> = <span name="scala.Option" class="extype">Option</span>[A] with Tagged[<span name="scalaz.Tags.Max" class="extype">Max</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#MinOption" data-isabs="false">
+      <a id="MinOption:MinOption[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">MinOption</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> = <span name="scala.Option" class="extype">Option</span>[A] with Tagged[<span name="scalaz.Tags.Min" class="extype">Min</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#PLens" data-isabs="false">
+      <a id="PLens:PLens[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PLens</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.PLensT" class="extype">PLensT</span>[Id, A, B]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#PState" data-isabs="false">
+      <a id="PState:PState[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PState</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.StateT" class="extype">StateT</span>[Id, A, <span name="scala.Option" class="extype">Option</span>[B]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#PStateT" data-isabs="false">
+      <a id="PStateT:PStateT[F, A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PStateT</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">+_</span>]</span></span>, <span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.StateT" class="extype">StateT</span>[F, A, <span name="scala.Option" class="extype">Option</span>[B]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#RWS" data-isabs="false">
+      <a id="RWS:RWS[R, W, S, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RWS</span><span class="tparams">[<span name="R">-R</span>, <span name="W">+W</span>, <span name="S">S</span>, <span name="A">+A</span>]</span><span class="result"> = <span name="scalaz.ReaderWriterStateT" class="extype">ReaderWriterStateT</span>[Identity, R, W, S, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#RWST" data-isabs="false">
+      <a id="RWST:RWST[F, R, W, S, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RWST</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">+_</span>]</span></span>, <span name="R">-R</span>, <span name="W">+W</span>, <span name="S">S</span>, <span name="A">+A</span>]</span><span class="result"> = <span name="scalaz.ReaderWriterStateT" class="extype">ReaderWriterStateT</span>[F, R, W, S, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Reader" data-isabs="false">
+      <a id="Reader:Reader[E, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Reader</span><span class="tparams">[<span name="E">E</span>, <span name="A">A</span>]</span><span class="result"> = <span name="scalaz.Kleisli" class="extype">Kleisli</span>[Id, E, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#ReaderT" data-isabs="false">
+      <a id="ReaderT:ReaderT[F, E, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ReaderT</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">+_</span>]</span></span>, <span name="E">E</span>, <span name="A">A</span>]</span><span class="result"> = <span name="scalaz.Kleisli" class="extype">Kleisli</span>[F, E, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#ReaderWriterState" data-isabs="false">
+      <a id="ReaderWriterState:ReaderWriterState[R, W, S, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ReaderWriterState</span><span class="tparams">[<span name="R">-R</span>, <span name="W">+W</span>, <span name="S">S</span>, <span name="A">+A</span>]</span><span class="result"> = <span name="scalaz.ReaderWriterStateT" class="extype">ReaderWriterStateT</span>[Identity, R, W, S, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#State" data-isabs="false">
+      <a id="State:State[S, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">State</span><span class="tparams">[<span name="S">S</span>, <span name="A">+A</span>]</span><span class="result"> = <span name="scalaz.StateT" class="extype">StateT</span>[Id, S, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Store" data-isabs="false">
+      <a id="Store:Store[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Store</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.StoreT" class="extype">StoreT</span>[Id, A, B]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Tagged" data-isabs="false">
+      <a id="Tagged:Tagged[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Tagged</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> = AnyRef { type Tag = T }</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Unwriter" data-isabs="false">
+      <a id="Unwriter:Unwriter[W, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Unwriter</span><span class="tparams">[<span name="W">W</span>, <span name="A">A</span>]</span><span class="result"> = <span name="scalaz.UnwriterT" class="extype">UnwriterT</span>[Id, W, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#ValidationNEL" data-isabs="false">
+      <a id="ValidationNEL:ValidationNEL[E, X]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ValidationNEL</span><span class="tparams">[<span name="E">+E</span>, <span name="X">+X</span>]</span><span class="result"> = <span name="scalaz.Validation" class="extype">Validation</span>[<span name="scalaz.NonEmptyList" class="extype">NonEmptyList</span>[E], X]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#ValidationTNEL" data-isabs="false">
+      <a id="ValidationTNEL:ValidationTNEL[M, E, X]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ValidationTNEL</span><span class="tparams">[<span name="M">M<span class="tparams">[<span name="_">+_</span>]</span></span>, <span name="E">+E</span>, <span name="X">+X</span>]</span><span class="result"> = <span name="scalaz.ValidationT" class="extype">ValidationT</span>[M, <span name="scalaz.NonEmptyList" class="extype">NonEmptyList</span>[E], X]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#Writer" data-isabs="false">
+      <a id="Writer:Writer[W, A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Writer</span><span class="tparams">[<span name="W">W</span>, <span name="A">A</span>]</span><span class="result"> = <span name="scalaz.WriterT" class="extype">WriterT</span>[Id, W, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#|--&gt;" data-isabs="false">
+      <a id="|--&gt;:|--&gt;[A, B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $bar$minus$minus$greater">|--&gt;</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> = <span name="scalaz.StoreT" class="extype">StoreT</span>[Id, B, A]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#|&gt;=|" data-isabs="false">
+      <a id="|&gt;=|:|&gt;=|[G, F]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $bar$greater$eq$bar">|&gt;=|</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> = <span name="scalaz.MonadPartialOrder" class="extype">MonadPartialOrder</span>[G, F]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#~&gt;" data-isabs="false">
+      <a id="~&gt;:~&gt;[F, G]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $tilde$greater">~&gt;</span><span class="tparams">[<span name="F">-F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="G">+G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> = <span name="scalaz.NaturalTransformation" class="extype">NaturalTransformation</span>[F, G]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#~~&gt;" data-isabs="false">
+      <a id="~~&gt;:~~&gt;[F, G]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $tilde$tilde$greater">~~&gt;</span><span class="tparams">[<span name="F">-F<span class="tparams">[<span name="_">_</span>, <span name="_">_</span>]</span></span>, <span name="G">+G<span class="tparams">[<span name="_">_</span>, <span name="_">_</span>]</span></span>]</span><span class="result"> = <span name="scalaz.BiNaturalTransformation" class="extype">BiNaturalTransformation</span>[F, G]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#⊤" data-isabs="false">
+      <a id="⊤:⊤"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $u22A4">⊤</span><span class="result"> = <span name="scala.Any" class="extype">Any</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.package#⊥" data-isabs="false">
+      <a id="⊥:⊥"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name" title="gt4s: $u22A5">⊥</span><span class="result"> = <span name="scala.Nothing" class="extype">Nothing</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="scalaz.package#RWST" data-isabs="false">
+      <a id="RWST:scalaz.ReaderWriterStateT.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">RWST</span><span class="result">: scalaz.ReaderWriterStateT.type</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.akkaz" data-isabs="false">
+      <a id="akkaz:akkaz"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="akkaz/package.html"><span class="name">akkaz</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Contains scalaz typeclasses related to <a href="http://akka.io/">akka 2.x</a>.</p>
+    </li><li visbl="pub" name="scalaz.package#idInstance" data-isabs="false">
+      <a id="idInstance:Traverse[Id] with Each[Id] with Monad[Id] with Comonad[Id] with Cojoin[Id] with Distributive[Id] with Zip[Id] with Unzip[Id] with Cozip[Id]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">idInstance</span><span class="result">: <span name="scalaz.Traverse" class="extype">Traverse</span>[Id] with <span name="scalaz.Each" class="extype">Each</span>[Id] with <span name="scalaz.Monad" class="extype">Monad</span>[Id] with <span name="scalaz.Comonad" class="extype">Comonad</span>[Id] with <span name="scalaz.Cojoin" class="extype">Cojoin</span>[Id] with <span name="scalaz.Distributive" class="extype">Distributive</span>[Id] with <span name="scalaz.Zip" class="extype">Zip</span>[Id] with <span name="scalaz.Unzip" class="extype">Unzip</span>[Id] with <span name="scalaz.Cozip" class="extype">Cozip</span>[Id]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>package</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
