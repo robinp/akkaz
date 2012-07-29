@@ -5,6 +5,9 @@ import scalaz.{Monad, Comonad, Traverse, Applicative}
 import akka.util.Duration
 import akka.dispatch.{ExecutionContext, Future, KeptPromise, Await}
 
+/**
+ * @see [[scalaz.akkaz.future]] for examples
+ */
 trait FutureInstances {
 
   /**Instances without blocking operations*/
