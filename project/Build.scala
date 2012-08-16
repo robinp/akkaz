@@ -27,10 +27,10 @@ object BuildLib extends Build {
         //"akka-snapshots" at "http://repo.akka.io/snapshots"
       ),
       libraryDependencies ++= Seq(
-        "org.scalaz" %% "scalaz-core" % "7.0.0-M1",
-        //"com.typesafe.akka" % "akka-actor" % "2.1-SNAPSHOT", // included in 2.10.0-M6 ?
-        "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.0-M1" % "test",
+        "org.scalaz" %% "scalaz-core" % "7.0.0-M2",
+        "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.0-M2" % "test",
         "org.specs2" %% "specs2" % "1.11" % "test"
+        // akka is integrated into scala 2.10
       )
     )
 

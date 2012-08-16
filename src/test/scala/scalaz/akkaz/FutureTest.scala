@@ -52,6 +52,9 @@ class FutureTest extends scalaz.Spec {
     checkAll("Future", comonad.laws[Future])
     checkAll("Future", applicative.laws[Future])
     checkAll("Future", traverse.laws[Future])
+
+    import scalaz.akkaz.future.futureMonoid
+    checkAll("Future", monoid.laws[Future[Int]])
   }
 
   private def busyFuture[T](t: => T): Future[T] =
