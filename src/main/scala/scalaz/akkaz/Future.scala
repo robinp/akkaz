@@ -1,6 +1,6 @@
 package scalaz.akkaz
 
-import scalaz.{Monad, Comonad, Traverse, Applicative}
+import scalaz.{Monoid, Monad, Comonad, Traverse, Applicative}
 
 import akka.dispatch.{Await, ExecutionContext, Future, Promise}
 import akka.util.Duration
@@ -9,6 +9,13 @@ import akka.util.Duration
  * @see [[scalaz.akkaz.future]] for examples
  */
 trait FutureInstances {
+
+  implicit def futureMonoid[A](implicit A: Monoid[A], ec: ExecutionContext) = new Monoid[Future[A]] {
+
+    override def zero: Future[A] = Promise.successful(A.zero)
+
+    override def append(f1: Future[A], f2: => Future[A]): Future[A] = (f1 zip f2) map (x => A.append(x._1, x._2))
+  }
 
   /**Instances without blocking operations*/
   trait FutureNonblockingInstances extends Monad[Future] {
@@ -64,7 +71,7 @@ trait FutureInstances {
 }
 
 /**
- * Quickstart to import all instances (needs ExecutionContext and possibly timeout in implicit scope):
+ * Quickstart to import all instances (needs ExecutionContext and optionally timeout in implicit scope):
  * {{{
  * import scalaz.akkaz.future._
  * }}}
@@ -74,6 +81,7 @@ trait FutureInstances {
  * {{{
  * val ec: akka.dispatch.ExecutionContext = ...
  * implicit val F = scalaz.akkaz.future.futureInstancesNonblocking(ec)
+ * implicit val M = scalaz.akkaz.future.futureMonoid[A]
  * }}}
  *
  * To import all typeclasses (including Comonad and Traverse):

@@ -23,9 +23,9 @@ object BuildLib extends Build {
       scalaVersion := "2.9.2",
       resolvers += "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases",
       libraryDependencies ++= Seq(
-        "org.scalaz" %% "scalaz-core" % "7.0.0-M1",
+        "org.scalaz" %% "scalaz-core" % "7.0.0-M2",
         "com.typesafe.akka" % "akka-actor" % "2.0.2",
-        "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.0-M1" % "test",
+        "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.0-M2" % "test",
         "org.specs2" %% "specs2" % "1.11" % "test"
       )
     )

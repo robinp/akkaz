@@ -37,7 +37,7 @@ class FutureTest extends scalaz.Spec {
 
   implicit val ec = ExecutionContexts.fromExecutor(Executors.newFixedThreadPool(5))
 
-  implicit val atMost: Duration = 5 seconds
+  implicit val atMost: Duration = 5.seconds
 
   implicit def futureArbitrary[T](implicit T: Arbitrary[T]): Arbitrary[Future[T]] =
     Arbitrary(Gen.frequency(
@@ -52,6 +52,9 @@ class FutureTest extends scalaz.Spec {
     checkAll("Future", comonad.laws[Future])
     checkAll("Future", applicative.laws[Future])
     checkAll("Future", traverse.laws[Future])
+
+    import scalaz.akkaz.future.futureMonoid
+    checkAll("Future", monoid.laws[Future[Int]])
   }
 
   private def busyFuture[T](t: => T): Future[T] = Future {
