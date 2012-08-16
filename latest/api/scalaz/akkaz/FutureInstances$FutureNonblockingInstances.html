@@ -397,14 +397,14 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Functor</dd></dl></div>
     </li><li visbl="pub" name="scalaz.Functor#counzip" data-isabs="false">
-      <a id="counzip[A, B](Either[Future[A], Future[B]]):Future[Either[A, B]]"></a>
+      <a id="counzip[A, B](\/[Future[A], Future[B]]):Future[\/[A, B]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">counzip</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="a">a: <span name="scala.Either" class="extype">Either</span>[<span name="akka.dispatch.Future" class="extype">Future</span>[A], <span name="akka.dispatch.Future" class="extype">Future</span>[B]]</span>)</span><span class="result">: <span name="akka.dispatch.Future" class="extype">Future</span>[<span name="scala.Either" class="extype">Either</span>[A, B]]</span>
+        <span class="name">counzip</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="a">a: <span name="scalaz.\/" class="extype">\/</span>[<span name="akka.dispatch.Future" class="extype">Future</span>[A], <span name="akka.dispatch.Future" class="extype">Future</span>[B]]</span>)</span><span class="result">: <span name="akka.dispatch.Future" class="extype">Future</span>[<span name="scalaz.\/" class="extype">\/</span>[A, B]]</span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Functor</dd></dl></div>
@@ -432,6 +432,18 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.Monad#filterM" data-isabs="false">
+      <a id="filterM[A](List[A])((A) ⇒ Future[Boolean]):Future[List[A]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filterM</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="l">l: List[A]</span>)</span><span class="params">(<span name="f">f: (A) ⇒ <span name="akka.dispatch.Future" class="extype">Future</span>[<span name="scala.Boolean" class="extype">Boolean</span>]</span>)</span><span class="result">: <span name="akka.dispatch.Future" class="extype">Future</span>[List[A]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Monad</dd></dl></div>
     </li><li visbl="prt" name="scala.AnyRef#finalize" data-isabs="false">
       <a id="finalize():Unit"></a>
       <h4 class="signature">
@@ -447,6 +459,18 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li visbl="pub" name="scalaz.Applicative#flip" data-isabs="false">
+      <a id="flip:Applicative[Future]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flip</span><span class="result">: <span name="scalaz.Applicative" class="extype">Applicative</span>[<span name="akka.dispatch.Future" class="extype">Future</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Applicative</dd></dl></div>
     </li><li visbl="pub" name="scalaz.Functor#fpair" data-isabs="false">
       <a id="fpair[A](Future[A]):Future[(A, A)]"></a>
       <h4 class="signature">
@@ -975,6 +999,30 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Pointed</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.Monad#replicateM" data-isabs="false">
+      <a id="replicateM[A](Int,Future[A]):Future[List[A]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">replicateM</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="n">n: <span name="scala.Int" class="extype">Int</span></span>, <span name="fa">fa: <span name="akka.dispatch.Future" class="extype">Future</span>[A]</span>)</span><span class="result">: <span name="akka.dispatch.Future" class="extype">Future</span>[List[A]]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Monad</dd></dl></div>
+    </li><li visbl="pub" name="scalaz.Monad#replicateM_" data-isabs="false">
+      <a id="replicateM_[A](Int,Future[A]):Future[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">replicateM_</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="n">n: <span name="scala.Int" class="extype">Int</span></span>, <span name="fa">fa: <span name="akka.dispatch.Future" class="extype">Future</span>[A]</span>)</span><span class="result">: <span name="akka.dispatch.Future" class="extype">Future</span>[<span name="scala.Unit" class="extype">Unit</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Monad</dd></dl></div>
     </li><li visbl="pub" name="scalaz.Applicative#sequence" data-isabs="false">
       <a id="sequence[A, G](G[Future[A]])(Traverse[G]):Future[G[A]]"></a>
       <h4 class="signature">

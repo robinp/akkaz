@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>scalaz.akkaz.future</title>
+          <title>scalaz.akkaz.FutureT</title>
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link type="text/css" media="screen" rel="stylesheet" href="../../lib/template.css" />
@@ -12,37 +12,26 @@
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
     
         </head>
-        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="value">
+        <body onload="sh_highlightDocument('../lib/', '.min.js');" class="type">
       <div id="definition">
-        <img src="../../lib/object_big.png" />
+        <img src="../../lib/class_big.png" />
         <p id="owner"><a name="scalaz" class="extype" href="../package.html">scalaz</a>.<a name="scalaz.akkaz" class="extype" href="package.html">akkaz</a></p>
-        <h1>future</h1>
+        <h1>FutureT</h1>
       </div>
 
       <h4 class="signature" id="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">future</span><span class="result"> extends <a name="scalaz.akkaz.FutureInstances" class="extype" href="FutureInstances.html">FutureInstances</a></span>
+        <span class="name">FutureT</span><span class="result"> extends AnyRef</span>
       </span>
       </h4>
       
-      <div class="fullcommenttop" id="comment"><div class="comment cmt"><p>Quickstart to import all instances (needs ExecutionContext and optionally timeout in implicit scope):</p><pre>
-<span class="kw">import</span> scalaz.akkaz.future._
-</pre><p>To import typeclass instances which don't use blocking operations
-(currently Monad and its dependencies like Functor or Applicative):</p><pre>
-<span class="kw">val</span> ec: akka.dispatch.ExecutionContext = ...
-<span class="kw">implicit</span> <span class="kw">val</span> F = scalaz.akkaz.future.futureInstancesNonblocking(ec)
-<span class="kw">implicit</span> <span class="kw">val</span> M = scalaz.akkaz.future.futureMonoid[A]
-</pre><p>To import all typeclasses (including Comonad and Traverse):</p><pre>
-<span class="kw">val</span> ec: akka.dispatch.ExecutionContext = ...
-<span class="kw">val</span> atMost: akka.util.Duration = ...
-<span class="kw">implicit</span> <span class="kw">val</span> F = scalaz.akkaz.future.futureInstancesAll(ec, atMost)
-</pre></div><div class="toggleContainer block">
+      <div class="fullcommenttop" id="comment"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a name="scalaz.akkaz.FutureInstances" class="extype" href="FutureInstances.html">FutureInstances</a>, AnyRef, <span name="scala.Any" class="extype">Any</span></div>
+          <div class="superTypes hiddenContent">AnyRef, <span name="scala.Any" class="extype">Any</span></div>
         </div></div>
     
 
@@ -56,7 +45,7 @@
               <span class="filtertype">Inherited</span>
               <ol><li class="hideall out"><span>Hide All</span></li>
               <li class="showall in"><span>Show all</span></li></ol>
-              <ol id="linearization"><li name="scalaz.akkaz.future" class="in"><span>future</span></li><li name="scalaz.akkaz.FutureInstances" class="in"><span>FutureInstances</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
+              <ol id="linearization"><li name="scalaz.akkaz.FutureT" class="in"><span>FutureT</span></li><li name="scala.AnyRef" class="in"><span>AnyRef</span></li><li name="scala.Any" class="in"><span>Any</span></li></ol>
             </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -66,36 +55,24 @@
 
       <div id="template">
         <div id="allMembers">
-        
-
-        <div class="types members" id="types">
-              <h3>Type Members</h3>
-              <ol><li visbl="pub" name="scalaz.akkaz.FutureInstances.FutureAllInstances" data-isabs="true">
-      <a id="FutureAllInstances:FutureAllInstances"></a>
+        <div class="members" id="constructors">
+              <h3>Instance Constructors</h3>
+              <ol><li visbl="pub" name="scalaz.akkaz.FutureT#this" data-isabs="false">
+      <a id="this:FutureT"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <a href="FutureInstances$FutureAllInstances.html"><span class="name">FutureAllInstances</span></a><span class="result"> extends Comonad[Future] with Traverse[Future] with FutureNonblockingInstances</span>
+        <span class="name">FutureT</span><span class="params">()</span>
       </span>
       </h4>
-      <p class="comment cmt">All instances including those that might use blocking operations</p>
-    </li><li visbl="pub" name="scalaz.akkaz.FutureInstances.FutureNonblockingInstances" data-isabs="true">
-      <a id="FutureNonblockingInstances:FutureNonblockingInstances"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
-      </span>
-      <span class="symbol">
-        <a href="FutureInstances$FutureNonblockingInstances.html"><span class="name">FutureNonblockingInstances</span></a><span class="result"> extends Monad[Future]</span>
-      </span>
-      </h4>
-      <p class="comment cmt">Instances without blocking operations</p>
+      
     </li></ol>
             </div>
+
+        
 
         
 
@@ -227,42 +204,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li visbl="pub" name="scalaz.akkaz.FutureInstances#futureInstancesAll" data-isabs="false">
-      <a id="futureInstancesAll(ExecutionContext,Duration):FutureAllInstances"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">futureInstancesAll</span><span class="params">(<span class="implicit">implicit </span><span name="ec">ec: <span name="akka.dispatch.ExecutionContext" class="extype">ExecutionContext</span></span>, <span name="d">d: <span name="akka.util.Duration" class="extype">Duration</span></span>)</span><span class="result">: <a name="scalaz.akkaz.FutureInstances.FutureAllInstances" class="extype" href="FutureInstances$FutureAllInstances.html">FutureAllInstances</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">All Future instances, needs implicit timeout duration in scope for blocking operations</p><div class="fullcomment"><div class="comment cmt"><p>All Future instances, needs implicit timeout duration in scope for blocking operations</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="scalaz.akkaz.FutureInstances" class="extype" href="FutureInstances.html">FutureInstances</a></dd></dl></div>
-    </li><li visbl="pub" name="scalaz.akkaz.FutureInstances#futureInstancesNonblocking" data-isabs="false">
-      <a id="futureInstancesNonblocking(ExecutionContext):FutureNonblockingInstances"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">futureInstancesNonblocking</span><span class="params">(<span class="implicit">implicit </span><span name="ec">ec: <span name="akka.dispatch.ExecutionContext" class="extype">ExecutionContext</span></span>)</span><span class="result">: <a name="scalaz.akkaz.FutureInstances.FutureNonblockingInstances" class="extype" href="FutureInstances$FutureNonblockingInstances.html">FutureNonblockingInstances</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Future instances without blocking operations.</p><div class="fullcomment"><div class="comment cmt"><p>Future instances without blocking operations.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="scalaz.akkaz.FutureInstances" class="extype" href="FutureInstances.html">FutureInstances</a></dd></dl></div>
-    </li><li visbl="pub" name="scalaz.akkaz.FutureInstances#futureMonoid" data-isabs="false">
-      <a id="futureMonoid[A](Monoid[A],ExecutionContext):Monoid[Future[A]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">futureMonoid</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="A">A: <span name="scalaz.Monoid" class="extype">Monoid</span>[A]</span>, <span name="ec">ec: <span name="akka.dispatch.ExecutionContext" class="extype">ExecutionContext</span></span>)</span><span class="result">: <span name="scalaz.Monoid" class="extype">Monoid</span>[<span name="akka.dispatch.Future" class="extype">Future</span>[A]]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a name="scalaz.akkaz.FutureInstances" class="extype" href="FutureInstances.html">FutureInstances</a></dd></dl></div>
     </li><li visbl="pub" name="scala.AnyRef#getClass" data-isabs="false">
       <a id="getClass():java.lang.Class[_]"></a>
       <h4 class="signature">
@@ -411,9 +352,7 @@
         </div>
 
         <div id="inheritedMembers">
-        <div name="scalaz.akkaz.FutureInstances" class="parent">
-              <h3>Inherited from <a name="scalaz.akkaz.FutureInstances" class="extype" href="FutureInstances.html">FutureInstances</a></h3>
-            </div><div name="scala.AnyRef" class="parent">
+        <div name="scala.AnyRef" class="parent">
               <h3>Inherited from AnyRef</h3>
             </div><div name="scala.Any" class="parent">
               <h3>Inherited from <span name="scala.Any" class="extype">Any</span></h3>
