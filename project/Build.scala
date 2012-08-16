@@ -20,11 +20,15 @@ object BuildLib extends Build {
   lazy val rootSettings =
     Seq(
       version := "0.0.1",
-      scalaVersion := "2.9.2",
-      resolvers += "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases",
+      scalaVersion := "2.10.0-M6",
+      scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
+      resolvers ++= Seq(
+        "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases"
+        //"akka-snapshots" at "http://repo.akka.io/snapshots"
+      ),
       libraryDependencies ++= Seq(
         "org.scalaz" %% "scalaz-core" % "7.0.0-M1",
-        "com.typesafe.akka" % "akka-actor" % "2.0.2",
+        //"com.typesafe.akka" % "akka-actor" % "2.1-SNAPSHOT", // included in 2.10.0-M6 ?
         "org.scalaz" %% "scalaz-scalacheck-binding" % "7.0.0-M1" % "test",
         "org.specs2" %% "specs2" % "1.11" % "test"
       )

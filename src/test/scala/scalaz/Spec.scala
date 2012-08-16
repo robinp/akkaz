@@ -1,5 +1,7 @@
 package scalaz
 
+import scala.language.implicitConversions
+
 import org.specs2.matcher._
 import org.specs2.mutable.FragmentsBuilder
 import org.specs2.specification.{Example, Fragments, BaseSpecification, SpecificationStructure}
