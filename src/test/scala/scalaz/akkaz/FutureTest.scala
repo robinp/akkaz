@@ -8,8 +8,7 @@ import org.scalacheck.Prop._
 import org.scalacheck.{Gen, Arbitrary}
 
 import scala.concurrent.{Future, Await, Promise, ExecutionContext}
-import scala.concurrent.util.duration._
-import scala.concurrent.util.Duration
+import scala.concurrent.duration._
 
 import java.util.concurrent.Executors
 

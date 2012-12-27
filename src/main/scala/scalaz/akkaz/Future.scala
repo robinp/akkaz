@@ -5,7 +5,7 @@ import scala.language.higherKinds
 import scalaz.{Monad, Monoid, Comonad, Traverse, Applicative}
 
 import scala.concurrent.{Await, ExecutionContext, Future, Promise}
-import scala.concurrent.util.Duration
+import scala.concurrent.duration._
 
 /**
  * @see [[scalaz.akkaz.future]] for examples
