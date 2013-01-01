@@ -1,9 +1,11 @@
 package scalaz.akkaz
 
-import scalaz.{Monoid, Monad, Comonad, Traverse, Applicative}
+import scala.language.higherKinds
 
-import akka.dispatch.{Await, ExecutionContext, Future, Promise}
-import akka.util.Duration
+import scalaz.{Monad, Monoid, Comonad, Traverse, Applicative}
+
+import scala.concurrent.{Await, ExecutionContext, Future, Promise}
+import scala.concurrent.duration._
 
 /**
  * @see [[scalaz.akkaz.future]] for examples
@@ -12,7 +14,7 @@ trait FutureInstances {
 
   implicit def futureMonoid[A](implicit A: Monoid[A], ec: ExecutionContext) = new Monoid[Future[A]] {
 
-    override def zero: Future[A] = Promise.successful(A.zero)
+    override def zero: Future[A] = Promise.successful(A.zero).future
 
     override def append(f1: Future[A], f2: => Future[A]): Future[A] = (f1 zip f2) map (x => A.append(x._1, x._2))
   }
@@ -38,9 +40,9 @@ trait FutureInstances {
 
     // Comonad
 
-    override def cojoin[A](a: Future[A]): Future[Future[A]] = Promise.successful(a)
+    override def cojoin[A](a: Future[A]): Future[Future[A]] = Promise.successful(a).future
 
-    override def cobind[A, B](fa: Future[A])(f: (Future[A]) => B): Future[B] = Promise.successful(f(fa))
+    override def cobind[A, B](fa: Future[A])(f: (Future[A]) => B): Future[B] = Promise.successful(f(fa)).future
 
     /**Blocks the current Thread until the result is available.*/
     override def copoint[A](p: Future[A]): A = Await.result(p, atMost)
@@ -49,7 +51,7 @@ trait FutureInstances {
 
     /**Blocks the current Thread until the result is available.*/
     override def traverseImpl[G[_] : Applicative, A, B](fa: Future[A])(f: (A) => G[B]): G[Future[B]] =
-      Applicative[G].map(f(Await.result(fa, atMost)))(Promise.successful)
+      Applicative[G].map(f(Await.result(fa, atMost)))(b => Promise.successful(b).future)
 
     /**Blocks the current Thread until the result is available.*/
     override def foldRight[A, B](fa: Future[A], z: => B)(f: (A, => B) => B): B =

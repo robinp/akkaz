@@ -7,9 +7,8 @@ import scalaz.scalacheck.ScalazArbitrary._
 import org.scalacheck.Prop._
 import org.scalacheck.{Gen, Arbitrary}
 
-import akka.dispatch._
-import akka.util.Duration
-import akka.util.duration._
+import scala.concurrent.{Future, Await, Promise, ExecutionContext}
+import scala.concurrent.duration._
 
 import java.util.concurrent.Executors
 
@@ -19,8 +18,8 @@ trait BlockingFutureEqual[T] extends scalaz.Equal[Future[T]] {
 
   def equal(a1: Future[T], a2: Future[T]): Boolean = {
     // TODO could account for exceptions too
-    val r1 = Await.result(a1, 5 seconds)
-    val r2 = Await.result(a2, 5 seconds)
+    val r1 = Await.result(a1, 5.seconds)
+    val r2 = Await.result(a2, 5.seconds)
     T.equal(r1, r2)
   }
 
@@ -35,14 +34,14 @@ object BlockingFutureEqual {
 
 class FutureTest extends scalaz.Spec {
 
-  implicit val ec = ExecutionContexts.fromExecutor(Executors.newFixedThreadPool(5))
+  implicit val ec = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(5))
 
   implicit val atMost: Duration = 5.seconds
 
   implicit def futureArbitrary[T](implicit T: Arbitrary[T]): Arbitrary[Future[T]] =
     Arbitrary(Gen.frequency(
       8 -> Gen.resultOf((t: T) => busyFuture(t)),
-      2 -> Gen.resultOf((t: T) => new KeptPromise(Right(t)))))
+      2 -> Gen.resultOf((t: T) => Promise.successful(t).future) ))
 
   {
     implicit val F = scalaz.akkaz.future.futureInstancesAll(ec, atMost)
@@ -57,10 +56,10 @@ class FutureTest extends scalaz.Spec {
     checkAll("Future", monoid.laws[Future[Int]])
   }
 
-  private def busyFuture[T](t: => T): Future[T] = Future {
-    Futures.blocking // signal to reschedule queued stuff to other threads
-    Thread.sleep(scala.util.Random.nextInt(30))
-    t
-  }
+  private def busyFuture[T](t: => T): Future[T] =
+    Future(scala.concurrent.blocking { // signal to reschedule queued stuff to other threads
+      Thread.sleep(scala.util.Random.nextInt(30))
+      t
+    })
 
 }
